@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: DELL
+Build-Jdk: 16.0.1
+Implementation-Title: APIXeKhach
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: APIXeKhach
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: https://projects.spring.io/spring-boot/APIXeKhach/
+Created-By: Maven Integration for Eclipse
+
