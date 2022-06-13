@@ -14,6 +14,7 @@ public class ConvertXe {
 		xeDTO.setBienSo(xeEntity.getBienSo());
 		xeDTO.setLoaiXe(xeEntity.getLoaiXe());
 		xeDTO.setSoLuongGhe(xeEntity.getSoLuongGhe());
+		xeDTO.setGia(xeEntity.getGiaTien());
 		
 		return xeDTO;
 	}
@@ -23,6 +24,7 @@ public class ConvertXe {
 		xeEntity.setBienSo(xeDTO.getBienSo());
 		xeEntity.setLoaiXe(xeDTO.getLoaiXe());
 		xeEntity.setSoLuongGhe(xeDTO.getSoLuongGhe());
+		xeEntity.setGiaTien(xeDTO.getGia());
 		
 		return xeEntity;
 	}
@@ -31,6 +33,7 @@ public class ConvertXe {
 		xeEntity.setBienSo(xeDTO.getBienSo());
 		xeEntity.setLoaiXe(xeDTO.getLoaiXe());
 		xeEntity.setSoLuongGhe(xeDTO.getSoLuongGhe());
+		xeEntity.setGiaTien(xeDTO.getGia());
 		
 		return xeEntity;
 	}

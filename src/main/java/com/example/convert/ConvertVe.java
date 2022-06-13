@@ -12,6 +12,7 @@ public class ConvertVe {
 		dto.setMaVe(entity.getId());
 		dto.setMaGhe(entity.getSoGhe());
 		dto.setNgayDat(entity.getNgayDat().toString());
+		dto.setTenKH(entity.getTenKH());
 		dto.setEmail(entity.getEmail());
 		dto.setSdt(entity.getSdt());
 		dto.setTrangThai(entity.getTrangThai());
@@ -25,6 +26,7 @@ public class ConvertVe {
 		entity.setId(dto.getMaVe());
 		entity.setSoGhe(dto.getMaGhe());
 		entity.setNgayDat(dto.getNgayDat().toString());
+		entity.setTenKH(dto.getTenKH());
 		entity.setEmail(dto.getEmail());
 		entity.setSdt(dto.getSdt());
 		entity.setTrangThai(dto.getTrangThai());
@@ -35,6 +37,7 @@ public class ConvertVe {
 	
 	public VeEntity toEntity(VeDTO dto, VeEntity entity) {// chỉnh đổi thông tin
 		entity.setSoGhe(dto.getMaGhe());
+		entity.setTenKH(dto.getTenKH());
 		entity.setEmail(dto.getEmail());
 		entity.setSdt(dto.getSdt());
 		entity.setGhiChu(dto.getGhiChu());

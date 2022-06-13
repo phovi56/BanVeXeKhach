@@ -2,24 +2,18 @@ package com.example.dto;
 
 public class ChuyenXeDTO {
 	private String maCX;
-	private String tenchuyen;
 	private String noiDi;
 	private String noiDen;
 	private String ngayDi;
 	private int khoangcach;
 	private long maXe;
+	private float gia;
 	
 	public String getMaCX() {
 		return maCX;
 	}
 	public void setMaCX(String maCX) {
 		this.maCX = maCX;
-	}
-	public String getTenchuyen() {
-		return tenchuyen;
-	}
-	public void setTenchuyen(String tenchuyen) {
-		this.tenchuyen = tenchuyen;
 	}
 	public String getNoiDi() {
 		return noiDi;
@@ -50,5 +44,11 @@ public class ChuyenXeDTO {
 	}
 	public void setMaXe(long maXe) {
 		this.maXe = maXe;
+	}
+	public float getGia() {
+		return gia;
+	}
+	public void setGia(float gia) {
+		this.gia = gia;
 	}
 }

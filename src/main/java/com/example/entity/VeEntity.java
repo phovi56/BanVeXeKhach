@@ -32,6 +32,9 @@ public class VeEntity {
 	@Column(name = "SoDienThoai")
 	private String sdt;
 	
+	@Column(name = "TenKH")
+	private String tenKH;
+	
 	@Column(name = "TrangThai")
 	private int trangThai;
 	
@@ -84,6 +87,14 @@ public class VeEntity {
 
 	public void setSdt(String sdt) {
 		this.sdt = sdt;
+	}
+
+	public String getTenKH() {
+		return tenKH;
+	}
+
+	public void setTenKH(String tenKH) {
+		this.tenKH = tenKH;
 	}
 
 	public int getTrangThai() {

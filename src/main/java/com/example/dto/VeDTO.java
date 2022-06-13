@@ -4,14 +4,15 @@ import java.time.LocalDate;
 
 public class VeDTO {
 	private String maVe;
-	private String maGhe;
-	private LocalDate ngayDat;
+	private String maCX;
+	private String tenKH;
 	private String email;
 	private String sdt;
-	private int trangThai;
+	private LocalDate ngayDat;
+	private String maGhe;
+	private int trangThai;	
 	private String ghiChu;
-	private String maCX;
-	
+
 	public String getMaVe() {
 		return maVe;
 	}
@@ -59,5 +60,11 @@ public class VeDTO {
 	}
 	public void setMaCX(String maCX) {
 		this.maCX = maCX;
+	}
+	public String getTenKH() {
+		return tenKH;
+	}
+	public void setTenKH(String tenKH) {
+		this.tenKH = tenKH;
 	}
 }

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "xe", uniqueConstraints = @UniqueConstraint(columnNames = {"BienSo"}))
+@Table(name = "Xe", uniqueConstraints = @UniqueConstraint(columnNames = {"BienSo"}))
 public class XeEntity {
 	@Id
 	@Column(name = "MaXe")
@@ -28,6 +28,9 @@ public class XeEntity {
 	
 	@Column(name = "SoLuongGhe")
 	private Integer soLuongGhe;
+	
+	@Column(name = "GiaTien")
+	private float giaTien;
 	
 	@OneToMany(mappedBy = "xe")
 	private List<ChuyenXeEntity> chuyenXe = new ArrayList<>();
@@ -62,6 +65,14 @@ public class XeEntity {
 
 	public void setSoLuongGhe(Integer soLuongGhe) {
 		this.soLuongGhe = soLuongGhe;
+	}
+	
+	public float getGiaTien() {
+		return giaTien;
+	}
+
+	public void setGiaTien(float giaTien) {
+		this.giaTien = giaTien;
 	}
 
 	public List<ChuyenXeEntity> getChuyenXe() {

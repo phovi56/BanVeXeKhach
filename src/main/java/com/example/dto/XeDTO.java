@@ -5,6 +5,7 @@ public class XeDTO {
 	private String bienSo;
 	private	String loaiXe;
 	private int soLuongGhe;
+	private float gia;
 	
 	public Long getMaXe() {
 		return maXe;
@@ -29,5 +30,11 @@ public class XeDTO {
 	}
 	public void setSoLuongGhe(int soLuongGhe) {
 		this.soLuongGhe = soLuongGhe;
+	}
+	public float getGia() {
+		return gia;
+	}
+	public void setGia(float gia) {
+		this.gia = gia;
 	}
 }

@@ -10,37 +10,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.dto.ChuyenXeDTO;
-import com.example.service.IChuyenXeService;
+import com.example.dto.LoTrinhDTO;
+import com.example.service.ILoTrinhService;
 
 @RestController
-@RequestMapping("/tour")
-public class ChuyenXeAPI {
+@RequestMapping("/route")
+public class LoTrinhAPI {
 	@Autowired
-	private IChuyenXeService service;
+	ILoTrinhService service;
 	
 	@PostMapping("")
-	public ChuyenXeDTO createChuyenXe(@RequestBody ChuyenXeDTO dto) {
-		return service.saveChuyenXe(dto);
+	public LoTrinhDTO createLoTrinh(@RequestBody LoTrinhDTO dto) {
+		
+		return service.save(dto); 
 	}
 	
 	@PutMapping("")
-	public ChuyenXeDTO updateChuyenXe(@RequestParam("id") String id, @RequestBody ChuyenXeDTO dto) {
-		dto.setMaCX(id);
-		
-		return service.saveChuyenXe(dto);
+	public LoTrinhDTO updateLoTrinh(@RequestBody LoTrinhDTO dto) {
+		return service.save(dto);
 	}
 	
 	@DeleteMapping("/{id}")
-	public boolean deleteChuyenXe(@PathVariable("id") String id) {
-		return service.deleteChuyenXe(id);
+	public boolean deleteLoTrinh(@PathVariable("id") String id) {
+		return service.delete(id);
 	}
 	
 	@GetMapping("")
-	public List<ChuyenXeDTO> getChuyenXeDTOs(){
+	public List<LoTrinhDTO> getLoTrinhs(){
 		return service.getAll();
 	}
 }
