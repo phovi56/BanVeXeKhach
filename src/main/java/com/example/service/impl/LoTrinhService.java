@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.convert.ConvertLoTrinh;
-import com.example.dto.ChuyenXeDTO;
 import com.example.dto.LoTrinhDTO;
-import com.example.entity.ChuyenXeEntity;
 import com.example.entity.LoTrinhEntity;
 import com.example.repository.LoTrinhRepo;
 import com.example.service.ILoTrinhService;
@@ -24,7 +22,7 @@ public class LoTrinhService implements ILoTrinhService {
 	@Override
 	public LoTrinhDTO save(LoTrinhDTO dto) {
 		LoTrinhEntity entity = new LoTrinhEntity();
-		LoTrinhEntity oldEntity = repo.getOne(dto.getMa()); 
+		LoTrinhEntity oldEntity = repo.findOne(dto.getMa()); 
 		if(oldEntity != null) {
 			entity = convert.toEntity(dto, oldEntity);
 		}

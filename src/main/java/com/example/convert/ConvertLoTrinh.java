@@ -10,6 +10,7 @@ public class ConvertLoTrinh {
 	public LoTrinhDTO toDTO(LoTrinhEntity entity) {
 		LoTrinhDTO dto = new LoTrinhDTO();
 		dto.setMa(entity.getMa());
+		dto.setTen(entity.getTen());
 		dto.setNoiDi(entity.getNoiDi());
 		dto.setNoiDen(entity.getNoiDen());
 		dto.setKhoangCach(entity.getKhoangCach());

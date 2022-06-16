@@ -7,6 +7,7 @@ public class ChuyenXeDTO {
 	private String ngayDi;
 	private int khoangcach;
 	private long maXe;
+	private String maLT;
 	private float gia;
 	
 	public String getMaCX() {
@@ -50,5 +51,11 @@ public class ChuyenXeDTO {
 	}
 	public void setGia(float gia) {
 		this.gia = gia;
+	}
+	public String getMaLT() {
+		return maLT;
+	}
+	public void setMaLT(String maLT) {
+		this.maLT = maLT;
 	}
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dto.VeDTO;
@@ -31,7 +32,7 @@ public class VeAPI {
 		return service.saveVe(dto);
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public boolean deleteVe(@PathVariable("id") String id) {
 		return service.deleteVe(id);
 	}

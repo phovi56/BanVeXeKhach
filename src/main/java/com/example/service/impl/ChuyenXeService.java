@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import com.example.convert.ConvertChuyenXe;
 import com.example.dto.ChuyenXeDTO;
 import com.example.entity.ChuyenXeEntity;
+import com.example.entity.LoTrinhEntity;
 import com.example.entity.XeEntity;
 import com.example.repository.ChuyenXeRepo;
+import com.example.repository.LoTrinhRepo;
 import com.example.repository.XeRepo;
 import com.example.service.IChuyenXeService;
 
@@ -20,6 +22,8 @@ public class ChuyenXeService implements IChuyenXeService {
 	ChuyenXeRepo cXeRepo;
 	@Autowired
 	XeRepo xeRepo;
+	@Autowired
+	LoTrinhRepo ltRepo;
 	@Autowired
 	ConvertChuyenXe convertChuyenXe;
 	
@@ -35,7 +39,9 @@ public class ChuyenXeService implements IChuyenXeService {
 			entity = convertChuyenXe.toEntity(dto);			
 		}
 		XeEntity xeEntity = xeRepo.findOne(dto.getMaXe());
+		LoTrinhEntity ltEntity = ltRepo.findOne(dto.getMaLT());
 		entity.setXe(xeEntity);
+		entity.setLoTrinh(ltEntity);
 		entity = cXeRepo.save(entity);
 		
 		return convertChuyenXe.toDTO(entity);

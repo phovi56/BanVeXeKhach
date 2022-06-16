@@ -11,6 +11,7 @@ public class ConvertVe {
 		VeDTO dto = new VeDTO();
 		dto.setMaVe(entity.getId());
 		dto.setMaGhe(entity.getSoGhe());
+		dto.setMaCX(entity.getChuyenXe().getId());
 		dto.setNgayDat(entity.getNgayDat().toString());
 		dto.setTenKH(entity.getTenKH());
 		dto.setEmail(entity.getEmail());

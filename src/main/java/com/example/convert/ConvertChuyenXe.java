@@ -16,6 +16,7 @@ public class ConvertChuyenXe {
 		dto.setNgayDi(entity.getNgayDi());
 		dto.setKhoangcach(entity.getLoTrinh().getKhoangCach());
 		dto.setMaXe(entity.getXe().getId());
+		dto.setGia(entity.getXe().getGiaTien());
 		
 		return dto;
 	}
