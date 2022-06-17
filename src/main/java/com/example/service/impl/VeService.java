@@ -10,7 +10,6 @@ import com.example.convert.ConvertVe;
 import com.example.dto.VeDTO;
 import com.example.entity.ChuyenXeEntity;
 import com.example.entity.VeEntity;
-import com.example.entity.XeEntity;
 import com.example.repository.ChuyenXeRepo;
 import com.example.repository.VeRepo;
 import com.example.service.IVeService;

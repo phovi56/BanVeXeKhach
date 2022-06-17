@@ -1,7 +1,5 @@
 package com.example.dto;
 
-import java.time.LocalDate;
-
 public class VeDTO {
 	private Long maVe;
 	private String maCX;

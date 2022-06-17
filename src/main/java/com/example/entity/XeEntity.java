@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -33,8 +32,8 @@ public class XeEntity {
 	@Column(name = "GiaTien")
 	private float giaTien;
 	
-	@ManyToMany(mappedBy = "xeEntities")
-	private List<ChuyenXeEntity> chuyenXes = new ArrayList<>();
+	@OneToMany(mappedBy = "xe")
+	private List<ChuyenXeEntity> chuyenXe = new ArrayList<>();
 	
 	public Long getId() {
 		return id;
@@ -77,11 +76,11 @@ public class XeEntity {
 	}
 
 	public List<ChuyenXeEntity> getChuyenXe() {
-		return chuyenXes;
+		return chuyenXe;
 	}
 
 	public void setChuyenXe(List<ChuyenXeEntity> chuyenXe) {
-		this.chuyenXes = chuyenXe;
+		this.chuyenXe = chuyenXe;
 	}
 }
 

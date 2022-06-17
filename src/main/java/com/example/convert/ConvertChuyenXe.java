@@ -1,12 +1,9 @@
 package com.example.convert;
 
-import java.util.Iterator;
-
 import org.springframework.stereotype.Component;
 
 import com.example.dto.ChuyenXeDTO;
 import com.example.entity.ChuyenXeEntity;
-import com.example.entity.XeEntity;
 
 @Component
 public class ConvertChuyenXe {
@@ -18,6 +15,8 @@ public class ConvertChuyenXe {
 		dto.setNoiDen(entity.getLoTrinh().getNoiDen());
 		dto.setNgayDi(entity.getNgayDi());
 		dto.setKhoangcach(entity.getLoTrinh().getKhoangCach());
+		dto.setMaXe(entity.getXe().getId());
+		dto.setGia(entity.getXe().getGiaTien());
 		
 		return dto;
 	}

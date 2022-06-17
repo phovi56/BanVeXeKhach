@@ -17,8 +17,6 @@ public interface IXeService {
 	// hàm lấy ds
 	public List<XeDTO> getAll();
 	
-	public List<XeDTO> getXeByMaLT(String maLT);
-	
 	// hàm lấy 1
 //	public XeDTO getOne(String bienSo);
 }
