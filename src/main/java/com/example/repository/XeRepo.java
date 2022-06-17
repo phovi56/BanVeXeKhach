@@ -7,5 +7,4 @@ import com.example.entity.XeEntity;
 
 @Repository
 public interface XeRepo extends JpaRepository<XeEntity, Long>{
-//	XeEntity findOneByCode(L BienSo);
 }

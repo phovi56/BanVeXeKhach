@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,7 +16,8 @@ import javax.persistence.Table;
 public class VeEntity {
 	@Id
 	@Column(name = "MaVe")
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@ManyToOne
 	@JoinColumn(name = "MaCX")
@@ -24,7 +27,7 @@ public class VeEntity {
 	private String soGhe;
 
 	@Column(name = "NgayDat")
-	private LocalDate ngayDat;
+	private String ngayDat;
 		
 	@Column(name = "Email")
 	private String email;
@@ -41,11 +44,11 @@ public class VeEntity {
 	@Column(name = "GhiChu")
 	private String ghiChu;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -65,12 +68,12 @@ public class VeEntity {
 		this.soGhe = soGhe;
 	}
 
-	public LocalDate getNgayDat() {
+	public String getNgayDat() {
 		return ngayDat;
 	}
 
 	public void setNgayDat(String ngayDat) {
-		this.ngayDat = LocalDate.parse(ngayDat);
+		this.ngayDat = ngayDat;
 	}
 
 	public String getEmail() {

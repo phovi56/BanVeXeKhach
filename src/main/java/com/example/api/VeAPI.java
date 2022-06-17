@@ -33,7 +33,7 @@ public class VeAPI {
 	}
 	
 	@DeleteMapping("/{id}")
-	public boolean deleteVe(@PathVariable("id") String id) {
+	public boolean deleteVe(@PathVariable("id") Long id) {
 		return service.deleteVe(id);
 	}
 	

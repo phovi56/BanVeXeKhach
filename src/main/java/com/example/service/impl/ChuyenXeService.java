@@ -40,7 +40,7 @@ public class ChuyenXeService implements IChuyenXeService {
 		}
 		XeEntity xeEntity = xeRepo.findOne(dto.getMaXe());
 		LoTrinhEntity ltEntity = ltRepo.findOne(dto.getMaLT());
-		entity.setXe(xeEntity);
+		entity.getXeEntities().add(xeEntity);
 		entity.setLoTrinh(ltEntity);
 		entity = cXeRepo.save(entity);
 		

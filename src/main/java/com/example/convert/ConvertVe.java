@@ -12,7 +12,7 @@ public class ConvertVe {
 		dto.setMaVe(entity.getId());
 		dto.setMaGhe(entity.getSoGhe());
 		dto.setMaCX(entity.getChuyenXe().getId());
-		dto.setNgayDat(entity.getNgayDat().toString());
+		dto.setNgayDat(entity.getNgayDat());
 		dto.setTenKH(entity.getTenKH());
 		dto.setEmail(entity.getEmail());
 		dto.setSdt(entity.getSdt());
@@ -24,9 +24,8 @@ public class ConvertVe {
 	
 	public VeEntity toEntity(VeDTO dto) {
 		VeEntity entity = new VeEntity();
-		entity.setId(dto.getMaVe());
 		entity.setSoGhe(dto.getMaGhe());
-		entity.setNgayDat(dto.getNgayDat().toString());
+		entity.setNgayDat(dto.getNgayDat());
 		entity.setTenKH(dto.getTenKH());
 		entity.setEmail(dto.getEmail());
 		entity.setSdt(dto.getSdt());

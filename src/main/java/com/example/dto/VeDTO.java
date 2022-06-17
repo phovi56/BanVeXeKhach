@@ -3,20 +3,20 @@ package com.example.dto;
 import java.time.LocalDate;
 
 public class VeDTO {
-	private String maVe;
+	private Long maVe;
 	private String maCX;
 	private String tenKH;
 	private String email;
 	private String sdt;
-	private LocalDate ngayDat;
+	private String ngayDat;
 	private String maGhe;
 	private int trangThai;	
 	private String ghiChu;
 
-	public String getMaVe() {
+	public Long getMaVe() {
 		return maVe;
 	}
-	public void setMaVe(String maVe) {
+	public void setMaVe(Long maVe) {
 		this.maVe = maVe;
 	}
 	public String getMaGhe() {
@@ -25,11 +25,11 @@ public class VeDTO {
 	public void setMaGhe(String maGhe) {
 		this.maGhe = maGhe;
 	}
-	public LocalDate getNgayDat() {
+	public String getNgayDat() {
 		return ngayDat;
 	}
 	public void setNgayDat(String ngayDat) {
-		this.ngayDat = LocalDate.parse(ngayDat);
+		this.ngayDat = ngayDat;
 	}
 	public String getEmail() {
 		return email;

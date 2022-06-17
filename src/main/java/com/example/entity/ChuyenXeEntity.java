@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,9 +27,12 @@ public class ChuyenXeEntity {
 	@JoinColumn(name = "MaLT")
 	private LoTrinhEntity loTrinh;
 	
-	@ManyToOne
-	@JoinColumn(name = "MaXe")
-	private XeEntity xe;
+	@ManyToMany
+	@JoinTable(name = "xe_chuyenxe",
+	      joinColumns = @JoinColumn(name = "chuyenxe_id"),
+	      inverseJoinColumns = @JoinColumn(name = "xe_id")
+	  )
+	private List<XeEntity> xeEntities = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "chuyenXe")
 	private List<VeEntity> ve = new ArrayList<>();
@@ -55,13 +60,13 @@ public class ChuyenXeEntity {
 	public void setLoTrinh(LoTrinhEntity loTrinh) {
 		this.loTrinh = loTrinh;
 	}
-
-	public XeEntity getXe() {
-		return xe;
+	
+	public List<XeEntity> getXeEntities() {
+		return xeEntities;
 	}
 
-	public void setXe(XeEntity xe) {
-		this.xe = xe;
+	public void setXeEntities(List<XeEntity> xeEntities) {
+		this.xeEntities = xeEntities;
 	}
 
 	public List<VeEntity> getVe() {

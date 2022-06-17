@@ -44,4 +44,10 @@ public class XeAPI {
 	public List<XeDTO> getXe(){
 		return iXeService.getAll();
 	}
+	
+	@GetMapping("/{id}")
+	public List<XeDTO> getList(@PathVariable("id") String id){
+		
+		return iXeService.getXeByMaLT(id);
+	}
 }

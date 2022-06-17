@@ -6,6 +6,6 @@ import com.example.dto.VeDTO;
 
 public interface IVeService {
 	public VeDTO saveVe(VeDTO dto);
-	public boolean deleteVe(String maVe);
+	public boolean deleteVe(Long maVe);
 	public List<VeDTO> getAll();
 }

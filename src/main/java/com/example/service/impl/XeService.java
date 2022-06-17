@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.convert.ConvertXe;
 import com.example.dto.XeDTO;
+import com.example.entity.ChuyenXeEntity;
 import com.example.entity.XeEntity;
+import com.example.repository.ChuyenXeRepo;
+import com.example.repository.LoTrinhRepo;
 import com.example.repository.XeRepo;
 import com.example.service.IXeService;
 
@@ -16,6 +19,10 @@ import com.example.service.IXeService;
 public class XeService implements IXeService {
 	@Autowired
 	private XeRepo xeRepo;
+	@Autowired
+	private ChuyenXeRepo cXeRepo;
+	@Autowired
+	private LoTrinhRepo ltRepo;
 	@Autowired
 	private ConvertXe convertXe;
 	
@@ -34,22 +41,7 @@ public class XeService implements IXeService {
 		entity = xeRepo.save(entity);
 		return convertXe.toDTO(entity);
 	}
-
-//	@Override
-//	public XeDTO updatXe(String bienSo, XeDTO dto) {
-//		// TODO Auto-generated method stub
-////		if (xe != null) {
-////			XeEntity xe1 = xeRepo.getOne(bienSo);
-////			if (xe1 != null) {
-////				xe1.setLoaiXe(xe.getLoaiXe());
-////				xe1.setSoLuongGhe(xe.getSoLuongGhe());
-////
-////				return xeRepo.save(xe1);
-////			}
-////		}
-//		return null;
-//	}
-
+	
 	@Override
 	public boolean deleteXe(long id) {
 		// TODO Auto-generated method stub
@@ -73,11 +65,22 @@ public class XeService implements IXeService {
 		}
 		return listDTO;
 	}
-
-//	@Override
-//	public XeEntity getOne(String bienSo) {
-//		// TODO Auto-generated method stub
-//		return xeRepo.getOne(bienSo);
-//	}
-
+	
+	@Override
+	public List<XeDTO> getXeByMaLT(String maLT) {
+		List<XeDTO> listDTO = new ArrayList<XeDTO>();
+		List<XeEntity> listEntity = xeRepo.findAll();
+		ChuyenXeEntity cXeEntity = cXeRepo.findChuyenXeByloTrinh(ltRepo.findOne(maLT));
+		
+		for (XeEntity xeEntity : listEntity) {
+			for (ChuyenXeEntity cXeEntity2 : xeEntity.getChuyenXe()) {
+				if(cXeEntity2.equals(cXeEntity)) {
+					listDTO.add(convertXe.toDTO(xeEntity));
+					break;
+				}
+			}
+		}
+		
+		return listDTO;
+	}
 }
