@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.convert.ConvertChuyenXe;
+import com.example.convert.ConvertDoanhThu;
 import com.example.dto.ChuyenXeDTO;
+import com.example.dto.DoanhThu;
 import com.example.entity.ChuyenXeEntity;
 import com.example.entity.LoTrinhEntity;
 import com.example.entity.XeEntity;
@@ -26,6 +28,8 @@ public class ChuyenXeService implements IChuyenXeService {
 	LoTrinhRepo ltRepo;
 	@Autowired
 	ConvertChuyenXe convertChuyenXe;
+	@Autowired
+	ConvertDoanhThu convertDoanhThu;
 	
 	@Override
 	public ChuyenXeDTO saveChuyenXe(ChuyenXeDTO dto) {
@@ -83,5 +87,15 @@ public class ChuyenXeService implements IChuyenXeService {
 		
 		return convertChuyenXe.toDTO(cXeRepo.findOne(maCX));
 	}
-
+    
+	@Override
+	public List<DoanhThu> getDoanhThu(String ngayBD, String ngayKT) {
+		List<Object[]> listObj = cXeRepo.getDoanhThuByXe(ngayBD, ngayKT);
+		List<DoanhThu> listDT = new ArrayList<>();
+		for (Object[] objects : listObj) {
+			listDT.add(convertDoanhThu.toDTO(objects));
+		}
+		
+		return listDT;
+	}
 }
