@@ -17,7 +17,8 @@ public interface ChuyenXeRepo extends JpaRepository<ChuyenXeEntity, String> {
 			+ "FROM xe "
 			+ "JOIN chuyen_xe cx "
 			+ "ON xe.ma_xe = cx.ma_xe "
-			+ "WHERE cx.ngay_di BETWEEN ?1 AND ?2 "
-			+ "GROUP BY xe.ma_xe;", nativeQuery = true)
+			+ "WHERE STR_TO_DATE(cx.ngay_di,'%d/%m/%Y') BETWEEN STR_TO_DATE('01/06/2022','%d/%m/%Y') AND STR_TO_DATE('01/01/2023','%d/%m/%Y') "
+			+ "GROUP BY xe.ma_xe "
+			+ "ORDER BY xe.ma_xe;", nativeQuery = true)
 	List<Object[]> getDoanhThuByXe(String ngayBD, String ngayKT);
 }
